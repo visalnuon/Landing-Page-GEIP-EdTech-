@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "daisyui";
+/* app/globals.css */
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-khmer: 'Noto Serif Khmer', serif;
+}
+
+body {
+  font-family: var(--font-inter); /* Default to English font */
+}
+
+/* Example class for Khmer text */
+.khmer-text {
+  font-family: var(--font-khmer);
+}

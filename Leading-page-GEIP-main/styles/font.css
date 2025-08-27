@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;700&display=swap");
+
+.font-fam {
+  font-family: "Kantumruy Pro", sans-serif;
+}
+.font-s {
+  font-size: 18px;
+}
+
+.zoom-fade-in-out-loop {
+  animation: zoomFadeInOut 2s infinite alternate ease-in-out; /* Combined animation */
+  transform-origin: center center;
+}
+
+@keyframes zoomFadeInOut {
+  0% {
+    opacity: 0.8;
+    transform: scale(1); /* Start slightly smaller and transparent */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1); /* Zoom in and fully opaque */
+  }
+}
+.typing-text {
+  overflow: hidden; /* Hide the overflowing text */
+  border-right: 2px solid transparent; /* Simulate a cursor */
+  white-space: nowrap; /* Keep text in one line */
+  animation: infinite typing 4s steps(30, end), blink 0.75s step-end;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 500px; /* adjust as needed */
+}
+
+/* Track styles for continuous scrolling */
+.carousel-track {
+  display: flex;
+  position: absolute;
+  left: 0;
+  gap: 16px;
+  animation: slide 20s linear infinite; /* slide animation */
+  will-change: left; /* hint to optimize performance */
+  transition: all 0.5s ease; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pause the animation on hover */
+/* Keyframe animation for sliding effect */
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+/* Optional styling for the items inside the carousel */
+.carousel-item {
+  width: 200px; /* adjust item width */
+  height: 100%;
+  background-color: #f0f0f0; /* background for items */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
